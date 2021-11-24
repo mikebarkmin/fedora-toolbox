@@ -7,5 +7,6 @@ RUN sudo dnf install -y python3 python3-pip
 RUN sudo dnf install -y java-latest-openjdk openjfx
 RUN sudo dnf install -y R
 RUN sudo dnf install -y perl-CGI perl-autodie
+RUN sudo dnf install -y golang
 RUN sudo npm install -g prettier prettier-plugin-java typescript eslint pg-formatter
 RUN pip install uncommitted qmk
