@@ -6,6 +6,8 @@ RUN sudo dnf install -y yarnpkg
 RUN sudo dnf install -y python3 python3-pip
 RUN sudo dnf install -y java-latest-openjdk openjfx
 RUN sudo dnf install -y R
-RUN sudo dnf install -y golang
+RUN sudo dnf install -y golang golang-x-tools-goimports
+RUN sudo dnf install -y rust cargo
+
 RUN sudo npm install -g prettier prettier-plugin-java prettier-plugin-sql typescript eslint lua-fmt
 RUN pip install uncommitted qmk
