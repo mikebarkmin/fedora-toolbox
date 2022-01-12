@@ -8,6 +8,8 @@ RUN sudo dnf install -y java-latest-openjdk openjfx
 RUN sudo dnf install -y R
 RUN sudo dnf install -y golang golang-x-tools-goimports
 RUN sudo dnf install -y rust cargo
+RUN sudo dnf install -y perl-CGI perl-autodie
 
 RUN sudo npm install -g prettier prettier-plugin-java prettier-plugin-sql typescript eslint lua-fmt
-RUN pip install uncommitted qmk
+
+RUN pip install uncommitted qmk pyls-flake8 pylsp-mypy pyls-isort
