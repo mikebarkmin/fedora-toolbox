@@ -1,4 +1,4 @@
-name: Build Toolbox
+name: Build Toolbox Container
 
 on: [push]
 
@@ -18,5 +18,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: run script
-        run: ./run.sh
+      - name: Build for Branches
+        if: github.ref != 'refs/heads/main'
+        run: |
+          podman build -t "ghcr.io/${{ github.repository }}:${{ github.ref_name }}" .
+          podman push "ghcr.io/${{ github.repository }}:${{ github.ref_name }}"
+
+      - name: Build for main
+        if: github.ref == 'refs/heads/main'
+        run: |
+          podman build -t "ghcr.io/${{ github.repository }}" .
+          podman push "ghcr.io/${{ github.repository }}"
