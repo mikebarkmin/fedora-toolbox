@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora-toolbox:36
+FROM registry.fedoraproject.org/fedora-toolbox:37
 LABEL org.opencontainers.image.source=https://github.com/mikebarkmin/fedora-toolbox
 
 RUN sudo dnf install -y dnf-plugins-core
