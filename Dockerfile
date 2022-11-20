@@ -1,18 +1,15 @@
-FROM registry.fedoraproject.org/fedora-toolbox:37
+FROM ghcr.io/mikebarkmin/fedora-toolbox:37
 LABEL org.opencontainers.image.source=https://github.com/mikebarkmin/fedora-toolbox
 
-RUN sudo dnf install -y dnf-plugins-core
-RUN sudo dnf install -y neovim zsh ripgrep tmux stow git-crypt sqlite
-RUN sudo dnf clean all
-# RPM FUSION
-RUN sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-RUN sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+RUN sudo dnf install -y nodejs
+RUN sudo dnf install -y yarnpkg
+RUN sudo dnf install -y python3 python3-pip
+RUN sudo dnf install -y java-latest-openjdk openjfx
+RUN sudo dnf install -y R
+RUN sudo dnf install -y golang golang-x-tools-goimports
+RUN sudo dnf install -y rust cargo
+RUN sudo dnf install -y perl-CGI perl-autodie
 
-RUN sudo dnf install -y ffmpeg
+RUN sudo npm install -g prettier prettier-plugin-java prettier-plugin-sql typescript eslint lua-fmt pnpm
 
-# TERRAFORM
-RUN sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
-RUN sudo dnf install -y terraform
-
-# ANSIBLE
-RUN sudo dnf install -y ansible
+RUN pip install uncommitted qmk pyls-flake8 pylsp-mypy pyls-isort
