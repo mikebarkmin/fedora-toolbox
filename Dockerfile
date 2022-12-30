@@ -9,7 +9,8 @@ RUN sudo dnf install -y R
 RUN sudo dnf install -y golang golang-x-tools-goimports
 RUN sudo dnf install -y rust cargo
 RUN sudo dnf install -y perl-CGI perl-autodie
+RUN sudo dnf install -y gtk3-devel libsoup-devel pkg-config openssl-devel javascriptcoregtk4.0-devel webkit2gtk3-devel # tauri
 
 RUN sudo npm install -g prettier prettier-plugin-java prettier-plugin-sql typescript eslint lua-fmt pnpm
 
-RUN pip install uncommitted qmk pyls-flake8 pylsp-mypy pyls-isort
+RUN pip install uncommitted qmk pyls-flake8 pylsp-mypy pyls-isort pynvim
