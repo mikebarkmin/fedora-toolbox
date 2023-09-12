@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source=https://github.com/mikebarkmin/fedora-tool
 RUN sudo dnf install -y nodejs
 RUN sudo dnf install -y yarnpkg
 RUN sudo dnf install -y python3 python3-pip
-RUN sudo dnf install -y java-latest-openjdk openjfx
+RUN sudo dnf install -y java-latest-openjdk java-latest-openjdk-jmods openjfx
 RUN sudo dnf install -y R
 RUN sudo dnf install -y golang golang-x-tools-goimports
 RUN sudo dnf install -y rust cargo
